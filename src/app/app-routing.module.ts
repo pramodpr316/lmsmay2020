@@ -5,6 +5,7 @@ import { LayoutComponent } from "./layout/layout.component";
 import { AdminComponent } from "./admin/admin.component";
 import { BorrowerComponent } from "./borrower/borrower.component";
 import { LibrarianComponent } from "./librarian/librarian.component";
+import { AuthorComponent } from "./admin/author/author.component";
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: "lms/librarian",
         component: LibrarianComponent,
+      },
+      {
+        path: "lms/admin/author",
+        component: AuthorComponent,
       },
     ],
   },
