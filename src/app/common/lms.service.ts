@@ -10,4 +10,8 @@ export class LmsService {
   getAll(url) {
     return this.http.get(url);
   }
+
+  postObj(url, obj) {
+    return this.http.post(url, obj);
+  }
 }

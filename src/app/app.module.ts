@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -14,6 +15,9 @@ import { LibrarianComponent } from "./librarian/librarian.component";
 import { BorrowerComponent } from "./borrower/borrower.component";
 import { AuthorComponent } from "./admin/author/author.component";
 import { LmsService } from "./common/lms.service";
+import { PagerService } from "./common/pager.service";
+import { AuthsortPipe } from "./common/pipes/authsort.pipe";
+import { LmsDirectDirective } from "./common/directive/lms-direct.directive";
 
 @NgModule({
   declarations: [
@@ -26,9 +30,17 @@ import { LmsService } from "./common/lms.service";
     LibrarianComponent,
     BorrowerComponent,
     AuthorComponent,
+    AuthsortPipe,
+    LmsDirectDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [LmsService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgbModule,
+  ],
+  providers: [LmsService, PagerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
